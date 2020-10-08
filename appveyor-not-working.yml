@@ -42,7 +42,7 @@ before_build:
 
 after_build:
     # download and install MariaDB Server
-#    - cmd: appveyor-download.bat
+    - cmd: appveyor-download.bat
     - msiexec /i server.msi INSTALLDIR=c:\mariadb-server SERVICENAME=mariadb /qn
     # create test database
     - c:\mariadb-server\bin\mysql.exe -e "CREATE DATABASE odbc_test" --user=root
